@@ -16,7 +16,6 @@ This process don't need any Secret Key from key management hardware.
 
 Get file these parameters.
 
-- Upper Secret Key: $s_u$
 - Upper Seed: $e_u$
 - Upper Public Key: $P_u$
 
@@ -26,16 +25,14 @@ Compute file's merkle root.
 
 Compute file root keys.
 
-- Root Secret Key: $s_0 = skd(s_u, m_0)$
 - Root Seed: $e_0 = sdd(e_u, m_0)$
-- Root Public Key: $P_0 = pkd(P_u, m_0)$
+- Root Public Key: $P_0 = pkd(P_u, e_u, m_0)$
 
 Compute each file chunk's hash and keys.
 
 - Chunk Hash: $h_i$
-- Chunk Secret Key: $s_i = skd(s_0, h_i)$
 - Chunk Seed: $e_i = sdd(e_0, h_i)$
-- Chunk Public Key: $P_i = pkd(P_0, h_i)$
+- Chunk Public Key: $P_i = pkd(P_0, e_0, h_i)$
 
 Generate random encrypt keypair.
 
